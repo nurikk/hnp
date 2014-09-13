@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140913115213) do
+ActiveRecord::Schema.define(version: 20140913130922) do
 
   create_table "monologue_posts", force: true do |t|
     t.boolean  "published"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20140913115213) do
     t.text     "content"
     t.string   "url"
     t.datetime "published_at"
+    t.string   "origin"
   end
 
   add_index "monologue_posts", ["url"], name: "index_monologue_posts_on_url", unique: true

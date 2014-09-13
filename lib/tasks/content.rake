@@ -29,6 +29,7 @@ namespace :content do
       puts "Title: #{feed.channel.title}"
       feed.items.each do |item|
         next unless valid_url(item.title)
+        next if Monologue::Post.exists?(:origin => item.link)
         puts "Item: #{item.title}, #{item.link}"
 
         unless cache[item.link]
@@ -41,7 +42,7 @@ namespace :content do
             next
           end
 
-          Monologue::Post.create(:title => title, :published_at => DateTime.now, :user_id => 1, :content => content, :published => true)
+          Monologue::Post.create(:origin => item.link, :title => title, :published_at => DateTime.now, :user_id => 1, :content => content, :published => true)
         end
       end
     end
