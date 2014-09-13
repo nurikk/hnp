@@ -44,6 +44,13 @@ gem 'monologue', github: 'jipiboily/monologue'
 gem 'whenever', :require => false
 gem 'rest_client'
 
+group :production do
+  gem 'unicorn'
+end
+
 group :development do
-  gem 'capistrano-rails', '~> 1.1.1'
+  gem 'capistrano'
+  gem 'capistrano-rails'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rvm'
 end
