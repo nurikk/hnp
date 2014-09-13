@@ -39,7 +39,11 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 gem 'pry'
 gem 'monologue', github: 'jipiboily/monologue'
-gem 'yandex-translator', '~> 0.1.0'
+#gem 'yandex-translator', '~> 0.1.0'
 
 gem 'whenever', :require => false
 gem 'rest_client'
+
+group :development do
+  gem 'capistrano-rails', '~> 1.1.1'
+end
